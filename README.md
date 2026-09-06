@@ -1,4 +1,5 @@
 # -ClinicaVeterinaria-grupo-3
+
 # Integrante 1:(SRP)
 
 Durante esta fase, se refactorizó el código para asegurar que cada clase tenga una única razón para cambiar, eliminando la mezcla de responsabilidades.
@@ -8,3 +9,8 @@ Durante esta fase, se refactorizó el código para asegurar que cada clase tenga
 * BaseDatos.java Se eliminó la lógica ajena al almacenamiento de datos. El cálculo de ingresos mensuales se trasladó a `ReporteService`.
 
 * **Creación de `AuditoriaService.java`:** Se delegó el registro de operaciones (mapa de auditoría) a este nuevo servicio dedicado, quitándole esa carga a la clase de base de datos.
+=======
+**Integrante 2: OSP** 
+ + Añadi una clase para cada tratamiento existente
+ + Cambie la funcionalidad de TratamientoService para que trabaje con la interfaz, ahora se podra añadir otro tratamiento unicamente creando otra clase.
+
