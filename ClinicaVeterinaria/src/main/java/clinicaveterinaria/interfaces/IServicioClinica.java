@@ -9,40 +9,28 @@ import clinicaveterinaria.model.Veterinario;
 import java.util.List;
 
 
-public interface IServicioClinica {
-    void crearMascota(Mascota mascota);
+public interface IServicioClinica extends IMascotaService, ICitaService, IFacturaService, IReporteService{
+    //void crearMascota(Mascota mascota);
 
-    Mascota obtenerMascota(int id);
+    public interface IMascotaService {
+        Mascota obtenerMascota(int id);
+    }
 
-    void actualizarMascota(Mascota mascota);
+    public interface VeterinarioCrudService {
+        Veterinario obtenerVeterinario(int id);
+    }
+    
+    public interface ICitaService {
+        Cita obtenerCita(int id);
+   }
 
-    void eliminarMascota(int id);
+    public interface IFacturaService{
+    }
+    
+    public interface IReporteService {
+        List<Cita> generarReporteCitasPorVeterinario(int veterinarioId);
+        List<Mascota> generarReporteMascotasPorDueno(String duenoNombre);
+    }
 
-    void crearVeterinario(Veterinario veterinario);
 
-    Veterinario obtenerVeterinario(int id);
-
-    void actualizarVeterinario(Veterinario veterinario);
-
-    void eliminarVeterinario(int id);
-
-    void crearCita(Cita cita);
-
-    Cita obtenerCita(int id);
-
-    void cancelarCita(int id);
-
-    void crearTratamiento(Tratamiento tratamiento);
-
-    double calcularTratamiento(Tratamiento tratamiento);
-
-    void crearFactura(Factura factura);
-
-    void pagarFactura(int id);
-
-    List<Cita> generarReporteCitasPorVeterinario(int veterinarioId);
-
-    List<Mascota> generarReporteMascotasPorDueno(String duenoNombre);
-
-    double calcularIngresosMensual();
 }

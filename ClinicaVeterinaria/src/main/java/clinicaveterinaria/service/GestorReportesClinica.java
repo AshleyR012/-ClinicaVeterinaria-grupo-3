@@ -4,7 +4,10 @@ import clinicaveterinaria.repository.BaseDatos;
 
 
 public class GestorReportesClinica {
-    private final BaseDatos baseDatos;
+    private final IBaseDatos baseDatos;
+    public GestorReportesClinica(IBaseDatos baseDatos) {
+        this.baseDatos = baseDatos;
+    }
 
     public GestorReportesClinica(BaseDatos baseDatos) {
         this.baseDatos = baseDatos;
