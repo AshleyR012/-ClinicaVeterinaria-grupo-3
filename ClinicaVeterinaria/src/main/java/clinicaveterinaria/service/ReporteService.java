@@ -51,7 +51,7 @@ public class ReporteService {
     }
 
     public String crearReporte(Veterinario veterinario, Cita cita) {
-        return "Reporte: " + nombre + " atendio a " +
+        return "Reporte: " + veterinario.getNombre() + " atendio a " +
                 cita.getMascota().getNombre() + " con diagnostico " + cita.getDiagnostico();
     }
 }

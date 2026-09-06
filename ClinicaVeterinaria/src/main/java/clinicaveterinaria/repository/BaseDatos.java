@@ -46,26 +46,4 @@ public class BaseDatos implements IBaseDatos {
     public List<Factura> getFacturas() {
         return facturas;
     }
-
-    public void registrarOperacion(String nombre) {
-        auditoria.put(nombre, auditoria.getOrDefault(nombre, 0) + 1);
-    }
-
-    public Map<String, Integer> getAuditoria() {
-        return auditoria;
-    }
-
-    public double calcularIngresosMensual() {
-        double total = 0;
-        int mesActual = LocalDate.now().getMonthValue();
-        int anioActual = LocalDate.now().getYear();
-        for (Factura factura : facturas) {
-            if (factura.isPagada()
-                    && factura.getFecha().getMonthValue() == mesActual
-                    && factura.getFecha().getYear() == anioActual) {
-                total += factura.getMonto();
-            }
-        }
-        return total;
-    }
 }
