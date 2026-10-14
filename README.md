@@ -14,3 +14,11 @@ Durante esta fase, se refactorizó el código para asegurar que cada clase tenga
  + Añadi una clase para cada tratamiento existente
  + Cambie la funcionalidad de TratamientoService para que trabaje con la interfaz, ahora se podra añadir otro tratamiento unicamente creando otra clase.
 
+
+
+**Integrante 4 - DIP/ISP**
++ La interfaz IClinicaService tenia muchos métodos que no usaba, la solución fue dividirla en varias interfaces pequeñas y ordenadas. Así, interfaz utilizaba los métodos que le corresponde.
++ Las clases Clinica Y GestorReportesClinica creaban sus propias dependencias internas directamente utilizando la orden new. Entonces se cambio eso para que reciban sus dependencias desde el exterior a través de sus propios constructores.
+
+
+

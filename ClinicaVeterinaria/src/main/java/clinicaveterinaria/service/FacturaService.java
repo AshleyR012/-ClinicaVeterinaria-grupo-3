@@ -1,11 +1,12 @@
 package clinicaveterinaria.service;
 
+import clinicaveterinaria.interfaces.IFactureService;
 import clinicaveterinaria.model.Factura;
 import clinicaveterinaria.repository.BaseDatos;
 
 import java.util.List;
 
-public class FacturaService {
+public class FacturaService implements IFactureService {
     private final BaseDatos baseDatos;
 
     public FacturaService(BaseDatos baseDatos) {

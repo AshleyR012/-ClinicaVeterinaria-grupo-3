@@ -46,4 +46,9 @@ public class BaseDatos implements IBaseDatos {
     public List<Factura> getFacturas() {
         return facturas;
     }
+
+    @Override
+    public Map<String, Integer> getAuditoria() {
+        return auditoria;
+    }
 }

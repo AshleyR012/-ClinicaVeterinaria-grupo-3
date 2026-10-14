@@ -1,4 +1,4 @@
-package clinicaveterinaria.interfaces;
+/*package clinicaveterinaria.interfaces;
 
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.model.Factura;
@@ -9,7 +9,7 @@ import clinicaveterinaria.model.Veterinario;
 import java.util.List;
 
 
-public interface IServicioClinica extends IMascotaService, ICitaService, IFacturaService, IReporteService{
+/*public interface IServicioClinica extends IMascotaService, ICitaService, IFacturaService, IReporteService{
     //void crearMascota(Mascota mascota);
 
     public interface IMascotaService {
@@ -33,4 +33,4 @@ public interface IServicioClinica extends IMascotaService, ICitaService, IFactur
     }
 
 
-}
+}*/

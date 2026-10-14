@@ -1,5 +1,6 @@
 package clinicaveterinaria.service;
 
+import clinicaveterinaria.interfaces.IReporteService;
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.model.Factura;
 import clinicaveterinaria.model.Mascota;
@@ -9,13 +10,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReporteService {
+public class ReporteService implements IReporteService {
     private final BaseDatos baseDatos;
 
     public ReporteService(BaseDatos baseDatos) {
         this.baseDatos = baseDatos;
     }
 
+    @Override 
     public List<Cita> generarReporteCitasPorVeterinario(int veterinarioId) {
         List<Cita> resultado = new ArrayList<>();
         for (Cita cita : baseDatos.getCitas()) {
@@ -26,6 +28,7 @@ public class ReporteService {
         return resultado;
     }
 
+    @Override
     public List<Mascota> generarReporteMascotasPorDueno(String duenoNombre) {
         List<Mascota> resultado = new ArrayList<>();
         for (Mascota mascota : baseDatos.getMascotas()) {
@@ -36,6 +39,7 @@ public class ReporteService {
         return resultado;
     }
 
+    @Override
     public double calcularIngresosMensual() {
         double total = 0;
         int mesActual = LocalDate.now().getMonthValue();
@@ -50,6 +54,7 @@ public class ReporteService {
         return total;
     }
 
+    @Override
     public String crearReporte(Veterinario veterinario, Cita cita) {
         return "Reporte: " + veterinario.getNombre() + " atendio a " +
                 cita.getMascota().getNombre() + " con diagnostico " + cita.getDiagnostico();

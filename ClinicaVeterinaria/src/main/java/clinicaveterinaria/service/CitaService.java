@@ -1,22 +1,25 @@
 package clinicaveterinaria.service;
 
+import clinicaveterinaria.interfaces.ICitaService;
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.repository.BaseDatos;
 
 import java.util.List;
 
-public class CitaService {
+public class CitaService implements ICitaService {
     private final BaseDatos baseDatos;
 
     public CitaService(BaseDatos baseDatos) {
         this.baseDatos = baseDatos;
     }
 
+    @Override
     public void crearCita(Cita cita) {
         baseDatos.getCitas().add(cita);
         baseDatos.registrarOperacion("crearCita");
     }
 
+    @Override
     public Cita obtenerCita(int id) {
         for (Cita cita : baseDatos.getCitas()) {
             if (cita.getId() == id) {
@@ -26,16 +29,19 @@ public class CitaService {
         return null;
     }
 
+    @Override
     public void actualizarCita(Cita cita) {
         eliminarCita(cita.getId());
         crearCita(cita);
     }
 
+    @Override
     public void eliminarCita(int id) {
         baseDatos.getCitas().removeIf(cita -> cita.getId() == id);
         baseDatos.registrarOperacion("eliminarCita");
     }
 
+    @Override
     public List<Cita> listarCitas() {
         return baseDatos.getCitas();
     }
