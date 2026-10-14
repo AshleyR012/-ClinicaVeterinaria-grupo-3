@@ -9,7 +9,10 @@ public class GestorReportesClinica {
         this.baseDatos = baseDatos;
     }
 
-    public void imprimirResumenOperaciones() {
-        System.out.println("Resumen interno: " + baseDatos.getAuditoria());
+    public GestorReportesClinica(BaseDatos baseDatos) {
+        this.baseDatos = baseDatos;
+
+    public String obtenerResumenOperaciones() {
+        return "Resumen interno: " + baseDatos.getAuditoria();
     }
 }
