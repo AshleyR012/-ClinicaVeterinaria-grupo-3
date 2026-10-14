@@ -1,35 +1,20 @@
 package clinicaveterinaria.model;
 
-import clinicaveterinaria.interfaces.IAnimal;
 
 import java.util.Objects;
 
 
-public class Animal implements IAnimal {
+public class Animal{
     private int id;
     private String nombre;
-    private TipoAnimal tipo;
+    
 
     public Animal(int id, String nombre, TipoAnimal tipo) {
         this.id = id;
         this.nombre = nombre;
-        this.tipo = tipo;
+        
     }
 
-    @Override
-    public void volar() {
-        System.out.println(nombre + " esta volando.");
-    }
-
-    @Override
-    public void nadar() {
-        System.out.println(nombre + " esta nadando.");
-    }
-
-    @Override
-    public void caminar() {
-        System.out.println(nombre + " esta caminando.");
-    }
 
     public int getId() {
         return id;
@@ -47,13 +32,6 @@ public class Animal implements IAnimal {
         this.nombre = nombre;
     }
 
-    public TipoAnimal getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoAnimal tipo) {
-        this.tipo = tipo;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -71,13 +49,5 @@ public class Animal implements IAnimal {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", tipo=" + tipo +
-                '}';
-    }
+    
 }
