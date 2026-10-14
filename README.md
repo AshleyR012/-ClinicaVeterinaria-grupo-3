@@ -1,2 +1,4 @@
 # -ClinicaVeterinaria-grupo-3
-Integrante 2: Añadi una clase para cada tratamiento existente y cambie la funcionalidad de TratamientoService para que trabaje con la interfaz, ahora se podra añadir otro tratamiento unicamente creando otra clase.
+**Integrante 2: OSP** 
+ + Añadi una clase para cada tratamiento existente
+ + Cambie la funcionalidad de TratamientoService para que trabaje con la interfaz, ahora se podra añadir otro tratamiento unicamente creando otra clase.
