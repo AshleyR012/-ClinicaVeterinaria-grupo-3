@@ -3,6 +3,7 @@ package clinicaveterinaria.service;
 import clinicaveterinaria.model.TipoTratamiento;
 import clinicaveterinaria.model.Tratamiento;
 import clinicaveterinaria.repository.BaseDatos;
+import clinicaveterinaria.interfaces.ITratamiento;
 
 import java.util.List;
 
@@ -49,6 +50,14 @@ public class TratamientoService {
             return "Preparar camilla y bandas elasticas.";
         }
         return "Sin preparacion.";
+    }
+
+    public double calcularCostoFinal(ITratamiento tratamiento) {
+        return tratamiento.calcularCostoFinal();
+    }
+
+    public String obtenerIndicaciones(ITratamiento tratamiento) {
+        return tratamiento.obtenerIndicaciones();
     }
 
     public List<Tratamiento> listarTratamientos() {
