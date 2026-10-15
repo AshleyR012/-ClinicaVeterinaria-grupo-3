@@ -10,9 +10,16 @@ Durante esta fase, se refactorizó el código para asegurar que cada clase tenga
 
 * **Creación de `AuditoriaService.java`:** Se delegó el registro de operaciones (mapa de auditoría) a este nuevo servicio dedicado, quitándole esa carga a la clase de base de datos.
 
+
 **Integrante 2: OSP** 
  + Añadi una clase para cada tratamiento existente
  + Cambie la funcionalidad de TratamientoService para que trabaje con la interfaz, ahora se podra añadir otro tratamiento unicamente creando otra clase.
+ +
+
+**Integrante 3: LSP** 
+ + Primero limpiamos la clase base: la clase Animal solo debe quedar con atributos y metodos (id, nombre). 
+ + Luego creamos las interfaces mas pequeñas y especificas (Camiandor(): para los animales que pueden caminar, Nadador(): para  los animales que pueden nadar, Volador(): para los animales que pueden volar)
+ + Cada clase de Animales(perro, gato, pez, pajaro) solo extiende de Animal e implementa unicamente las interfaces conforme a sus capacidades reales. 
 
 
 
